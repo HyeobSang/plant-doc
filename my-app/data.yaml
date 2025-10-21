@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['Powdery Mildew', 'Septoria_leaf_spot']
+
+roboflow:
+  workspace: leafspotdetection
+  project: plant2-ax6p4
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/leafspotdetection/plant2-ax6p4/dataset/2
