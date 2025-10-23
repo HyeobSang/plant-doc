@@ -24,7 +24,7 @@ export default function DiagnoseView({ currentUser, onDiagnosisComplete }) {
             formData.append('plantName', plantName);
 
             // Flask API 호출
-            const response = await fetch('/.netlify/functions/diagnose', {
+            const response = await fetch('http://localhost:5001/api/diagnose', {
                 method: 'POST',
                 body: formData
             });
