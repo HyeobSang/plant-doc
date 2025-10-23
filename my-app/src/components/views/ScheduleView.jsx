@@ -1,7 +1,7 @@
 // src/components/views/ScheduleView.jsx
 
 import React, { useState, useEffect } from 'react';
-import { doc, getDoc, writeBatch, deleteDoc } from 'firebase/firestore';
+import { doc, getDoc, writeBatch, deleteDoc, updateDoc } from 'firebase/firestore';
 
 import { db, COLLECTIONS } from '../../api/firebase';
 import { Card, PageHeader, MessageModal } from '../common/Card';
