@@ -4,9 +4,9 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Firebase 설정
-const appId = 'plant-doctor-app';
-const firebaseConfig = {
+// 전역 변수 설정 (Canvas 환경에서 제공됨)
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
     apiKey: "AIzaSyADy-LF_rmt2hNUywQfrlpYI2KzY7mYvmk",
     authDomain: "plant-doctor-b3819.firebaseapp.com",
     projectId: "plant-doctor-b3819",
@@ -14,7 +14,7 @@ const firebaseConfig = {
     messagingSenderId: "815891328829",
     appId: "1:815891328829:web:3a6ad7ca0416100d059f54"
 };
-const initialAuthToken = null;
+const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
 let db, auth;
 if (Object.keys(firebaseConfig).length > 0) {
